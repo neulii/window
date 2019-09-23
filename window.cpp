@@ -40,4 +40,6 @@ void Window::OnQuit(wxCommandEvent& event)
 void Window::OnMessageButton(wxCommandEvent& event)
 {
 	std::cout << "button pressed" << std::endl;
+	std::cout << "super du" << std::endl;
 }
+
