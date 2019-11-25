@@ -1,4 +1,4 @@
 *.o
 session
 window
-
+.vscode
