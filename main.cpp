@@ -6,7 +6,7 @@ IMPLEMENT_APP(MyApp)
 
 bool MyApp::OnInit()
 {
-	Window *myWindow = new Window(wxT("Super fenster"));
+	Window *myWindow = new Window(wxT("hallo neulii"));
 	myWindow->Show(true);
 	
 	return true;
