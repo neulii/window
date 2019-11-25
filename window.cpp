@@ -8,10 +8,16 @@ Window::Window(const wxString& title) : wxFrame(NULL,wxID_ANY, title, wxDefaultP
 	button = new wxButton(panel, wxID_EXIT, wxT("Quit"), wxPoint(20, 20));
 	button2 = new wxButton(panel,ID_MESSAGE_BUTTON,wxT("Message"),wxPoint(20,60));
 	button_new = new wxButton(panel,ID_NEW_BUTTON, wxT("Neuer Button"),wxPoint (20,100));
+	
+ 	textInput = new wxTextCtrl( panel, ID_TEXT_INPUT_FIELD, "", 
+		wxPoint(20,200), wxSize(200,30));
+    
+	textInput->SetHint("Don't use 12345 here");
 
-	
-	
-	
+	Connect(ID_TEXT_INPUT_FIELD,
+			wxEVT_TEXT_ENTER,Window::showText));
+			
+			
 	//connet first button with event	
 	Connect(wxID_EXIT, 
 			wxEVT_COMMAND_BUTTON_CLICKED, 
@@ -63,6 +69,15 @@ void Window::OnKeyDown(wxKeyEvent& event)
 {
 	if(event.GetKeyCode()==27)
 		exit(0);
+
+	if(event.GetKeyCode()==(int)WXK_RETURN)
+	{
+		std::cout << "enter" << std::endl;
+	}
 	event.Skip();
 }
 
+void Window::showtext(wxCommandEvent& event)
+{
+	std::cout <<"showtext" << std::endl;
+}
