@@ -13,5 +13,5 @@ main.o: main.cpp main.h
 
 clean:
 
-	rm window
 	rm $(OBJS)
+	rm window

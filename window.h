@@ -20,6 +20,6 @@ public:
 	void OnQuit(wxCommandEvent & event);
 	void OnNewButtonPressed(wxCommandEvent& event);
 	void OnKeyDown(wxKeyEvent& event);
-	void showText(wxCommandEvent& event);
+	void OnTextEnter(wxCommandEvent& event);
 };
 

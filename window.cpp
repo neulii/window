@@ -1,6 +1,11 @@
 #include "window.h"
 #include <iostream>
 
+		
+wxBEGIN_EVENT_TABLE(Window, wxFrame)
+    EVT_BUTTON(BUTTON1, MyFrame::OnButton1)
+wxEND_EVENT_TABLE()
+
 
 Window::Window(const wxString& title) : wxFrame(NULL,wxID_ANY, title, wxDefaultPosition,wxSize(500,500))
 {
@@ -15,7 +20,7 @@ Window::Window(const wxString& title) : wxFrame(NULL,wxID_ANY, title, wxDefaultP
 	textInput->SetHint("Don't use 12345 here");
 
 	Connect(ID_TEXT_INPUT_FIELD,
-			wxEVT_TEXT_ENTER,Window::showText));
+			wxEVT_TEXT_ENTER,Window::OnTextEnter));
 			
 			
 	//connet first button with event	
@@ -77,7 +82,7 @@ void Window::OnKeyDown(wxKeyEvent& event)
 	event.Skip();
 }
 
-void Window::showtext(wxCommandEvent& event)
+void Window::OnTextEnter(wxCommandEvent& event)
 {
 	std::cout <<"showtext" << std::endl;
 }
