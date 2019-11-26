@@ -3,6 +3,7 @@
 const int ID_MESSAGE_BUTTON = 100;
 const int ID_NEW_BUTTON = 200;
 const int ID_TEXT_INPUT_FIELD = 300;
+const int ID_PANEL = 400;
 
 class Window : public wxFrame
 {
@@ -21,5 +22,6 @@ public:
 	void OnNewButtonPressed(wxCommandEvent& event);
 	void OnKeyDown(wxKeyEvent& event);
 	void OnTextEnter(wxCommandEvent& event);
+	wxDECLARE_EVENT_TABLE();
 };
 
