@@ -1,15 +1,16 @@
 OBJS = main.o window.o
 
-CXXFLAGS = -Wall -std=c++11 `wx-config --cxxflags --libs`
+CXXFLAGS = -Wall -std=c++11 `wx-config --cxxflags`
+LDLIBS   = `wx-config --libs`
 
 window: $(OBJS)
-	g++ -o window  main.o window.o $(CXXFLAGS)
+	g++ -o window  $(OBJS) $(CXXFLAGS) $(LDLIBS)  
 
 window.o: window.cpp window.h
-	g++ -c window.cpp -o window.o $(CXXFLAGS)
+	g++ -c window.cpp $(CXXFLAGS)
 
 main.o: main.cpp main.h
-	g++ -c main.cpp -o main.o $(CXXFLAGS)
+	g++ -c main.cpp $(CXXFLAGS)
 
 clean:
 
